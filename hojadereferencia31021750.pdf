@@ -1,0 +1,150 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=3cm}
+%opening
+
+\begin{document}
+	
+\begin{center}
+		\textbf{Hoja de Referencia MIPS32 - Jesus Contreras (31.021.750)}
+\end{center}
+
+	
+\section*{Registros Básicos}
+\begin{itemize}
+	\item \texttt{\$zero} - Siempre 0
+	\item \texttt{\$v0-\$v1} - Retorno de funciones
+	\item \texttt{\$a0-\$a3} - Argumentos
+	\item \texttt{\$t0-\$t9} - Temporales
+	\item \texttt{\$s0-\$s7} - Guardados
+	\item \texttt{\$sp} - Pila
+	\item \texttt{\$ra} - Retorno
+\end{itemize}
+
+
+\section*{Formato R (Registro)}
+\begin{itemize}
+	\item \texttt{add \$d,\$s,\$t} \\
+	\hspace*{0.5cm} \$d = \$s + \$t
+	\item \texttt{sub \$d,\$s,\$t} \\
+	\hspace*{0.5cm} \$d = \$s - \$t
+	\item \texttt{and \$d,\$s,\$t} \\
+	\hspace*{0.5cm} \$d = \$s \& \$t
+	\item \texttt{or \$d,\$s,\$t} \\
+	\hspace*{0.5cm} \$d = \$s | \$t
+	\item \texttt{slt \$d,\$s,\$t} \\
+	\hspace*{0.5cm} if(\$s<\$t) \$d=1 else 0
+\end{itemize}
+
+\section*{Formato I (Inmediato)}
+\begin{itemize}
+	\item \texttt{addi \$t,\$s,i} \\
+	\hspace*{0.5cm} \$t = \$s + i
+	\item \texttt{lw \$t,offset(\$s)} \\
+	\hspace*{0.5cm} Cargar palabra
+	\item \texttt{sw \$t,offset(\$s)} \\
+	\hspace*{0.5cm} Guardar palabra
+	\item \texttt{beq \$s,\$t,etiqueta} \\
+	\hspace*{0.5cm} if(\$s==\$t) salta a etiqueta
+	\item \texttt{bne \$s,\$t,etiqueta} \\
+	\hspace*{0.5cm} if(\$s!=\$t) salta a etiqueta
+	\item \texttt{andi \$t,\$s,i} \\
+	\hspace*{0.5cm} \$t = \$s \& i
+\end{itemize}
+
+\section*{Formato J (Salto)}
+\begin{itemize}
+	\item \texttt{j etiqueta} \\
+	\hspace*{0.5cm} Salto incondicional
+	\item \texttt{jal etiqueta} \\
+	\hspace*{0.5cm} Salta y guarda retorno
+	\item \texttt{jr \$ra} \\
+	\hspace*{0.5cm} Retorno de función
+\end{itemize}
+
+\section*{Operaciones Lógicas}
+\begin{itemize}
+	\item \texttt{sll \$d,\$t,shamt} \\
+	\hspace*{0.5cm} Desplazar izquierda
+	\item \texttt{srl \$d,\$t,shamt} \\
+	\hspace*{0.5cm} Desplazar derecha
+	\item \texttt{nor \$d,\$s,\$t} \\
+	\hspace*{0.5cm} NOR lógico
+	\item \texttt{xor \$d,\$s,\$t} \\
+	\hspace*{0.5cm} XOR lógico
+\end{itemize}
+
+\section*{Ejemplos Comunes}
+\subsection*{Cargar inmediato}
+\texttt{li \$t0, 42}
+
+\subsection*{Copiar registro}
+\texttt{move \$t0, \$t1}
+
+\subsection*{Bucle simple}
+\begin{verbatim}
+	loop:   addi $t0, $t0, -1
+	bne $t0, $zero, loop
+\end{verbatim}
+
+\subsection*{Acceso a arreglos}
+\begin{verbatim}
+	la $t0, array
+	lw $t1, 0($t0)
+\end{verbatim}
+
+\section*{Directivas de datos}
+\begin{itemize}
+	\item \texttt{.data} - Segmento datos
+	\item \texttt{.text} - Segmento código
+	\item \texttt{.word} - Enteros (4 bytes)
+	\item \texttt{.byte} - Bytes (1 byte)
+	\item \texttt{.ascii} - Cadena ASCII
+	\item \texttt{.asciiz} - ASCII + null
+	\item \texttt{.space n} - n bytes espacio
+	\item \texttt{.align n} - Alinear a $2^n$
+\end{itemize}
+
+\section*{Sistema (syscall)}
+\begin{itemize}
+	\item \texttt{\$v0 = 1} - Imprime enteros
+	\item \texttt{\$v0 = 4} - Imprime strings 
+	\item \texttt{\$v0 = 5} - Lee enteros
+	\item \texttt{\$v0 = 8} - Lee strings
+	\item \texttt{\$v0 = 10} - Exit
+\end{itemize}
+
+\subsection*{Ejemplo syscall}
+\begin{verbatim}
+	li $v0, 4   # print string
+	la $a0, msg # dirección
+	syscall
+\end{verbatim}
+
+\section*{Pila y Funciones}
+\begin{itemize}
+	\item \texttt{addi \$sp,\$sp,-4} \\
+	\hspace*{0.5cm} Reservar espacio
+	\item \texttt{sw \$ra,0(\$sp)} \\
+	\hspace*{0.5cm} Guardar retorno
+	\item \texttt{lw \$ra,0(\$sp)} \\
+	\hspace*{0.5cm} Restaurar retorno
+\end{itemize}
+
+\subsection*{Función ejemplo}
+\begin{verbatim}
+	funcion:
+	addi $sp,$sp,-8
+	sw $ra,4($sp)
+	sw $s0,0($sp)
+	# código...
+	lw $s0,0($sp)
+	lw $ra,4($sp)
+	addi $sp,$sp,8
+	jr $ra
+\end{verbatim}
+
+
+\end{document}
