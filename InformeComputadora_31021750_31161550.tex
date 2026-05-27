@@ -1,0 +1,137 @@
+\documentclass[]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=4cm}
+
+%opening
+\title{Informe de PC para Desarrollo de Videojuegos}
+\date{Mayo 2026}
+\author{Jesus Contreras(31.021.750)\\Gabriel Diaz (31.161.550)\\\\Profesor: José Canache\\\\Universidad de Carabobo\\Facultad experimental de Ciencias y Tecnología (FACYT)}
+
+\begin{document}
+	\begin{titlepage}
+		\centering
+		{\bfseries\LARGE Universidad de Carabobo \par}
+		\vspace{1cm}
+		{\scshape\Large Facultad Experimental de Ciencias y Tecnología \par}
+		\vspace{3cm}
+		{\scshape\Huge Informe de PC para desarrollo de videojuegos\par}
+		\vspace{3cm}
+		{\itshape\Large Materia: Arquitectura del Computador \par}
+		\vfill
+		{\Large Nombres:  \par}
+		{\Large Jesus Contreras (31.021.750)\\Gabriel Diaz (31.161.550)\\Profesor: José Canache \par}
+		
+		\vfill
+		{\Large Enero 2026 \par}
+	\end{titlepage}
+	\begin{abstract}
+		
+	\noindent En este informe se busca describir y justificar la selección de los componentes de una computadora, diseñada bajo un presupuesto de 3.000 dolares con su uso siendo enfocada hacia el desarrollo profesional de videojuegos.
+		
+	\end{abstract}
+	
+	\section{Componentes}
+	\subsection{Procesador (CPU)}\noindent\\
+	\textbf{AMD Ryzen 9 7950X3D (\$726.78):}\\\\
+	El procesador es el componente principal para la compilación de proyectos y la multitarea. El Ryzen 9 7950X3D con sus 16 núcleos, 32 hilos, una frecuencia base de 4.5 GHz y su frecuencia máxima que llega hasta los 5.7 GHz, minimiza los tiempos de compilado y permite ejecutar simultáneamente el motor de desarrollo, editores gráficos y procesos en segundo plano sin pérdida de rendimiento.\\\\
+	Escogimos este modelo porque incorpora la tecnología avanzada 3D V-Cache, la cual ofrece una enorme memoria caché apilada que acelera sustancialmente el manej de geometrías y físicas complejas en motores como Unreal Engine o Unity, y a diferencia de otros procesadores de precio similar como el Intel Core i9-14900K, descubrimos que este sufre de severos problemas de estabilidad térmica y requiere un consumo energético que supera los 300 vatios bajo carga máxima, el Ryzen 9 7950X3D mantiene un consumo promedio un 40\% menor, lo que disminuye los costos en refrigeración y asegura un entorno de trabajo estable durante largas horas de renderizado continuo. \\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM"}
+	
+	\newpage	
+	\subsection{Tarjeta Gráfica (GPU)}\noindent\\
+	\textbf{Gigabyte GeForce RTX 4080 Super WINDFORCE V2 (\$1099,99):}\\\\
+	Contiene un núcleo de 2550 MHz, 16 GB de GDDR6X, con una velocidad de reloj de 23 Gbps y un ancho de datos de 256 bits, 10.240 núcleos CUDA, que proporciona una potencia informática de 52.22 TFLOPS, sistema de refrigeración Windforce V2 con tres ventiladores de 100 mm y una conectividad de 3 DisplayPort 1.4a y 1 HDMI 2.1a, soportando hasta 4 monitores simultáneamente y una resolución máxima de 7680x4320 píxeles.\\\\
+	Este procesador es indispensable si el objetivo es desarrollar software con iluminación global dinámica o trazado de rayos (Ray Tracing). Al compararla con la ASUS TUF Gaming Radeon RX 7900 XTX, que compite en un rango de precio idéntico y ofrece un margen mayor de memoria bruta, la tarjeta de Nvidia se impone de forma contundente en el ámbito del desarrollo. Los motores de juego modernos y las herramientas de diseño como Blender están optimizados nativamente para la arquitectura de núcleos CUDA y los aceleradores de trazado de rayos de Nvidia, dejando a la opción de AMD muy por detrás en el rendimiento de visores en tiempo real y herramientas de inteligencia artificial como DLSS, esenciales para optimizar los títulos modernos.\\\\
+	Su inclusión se justifica dentro del presupuesto general al ser la alternativa más equilibrada antes de dar el salto a la costosa RTX 4090, garantizando estabilidad en el renderizado en tiempo real y la capacidad de probar los juegos en condiciones de calidad máxima sin ralentizaciones.\\\\\\\\\\
+
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (1)"}
+
+	\newpage	
+	\subsection{Placa Madre (Motherboard)}\noindent\\
+	\textbf{Gigabyte B650 AORUS Elite AX (\$146,69):}\\\\
+	Proporciona una plataforma estable sobre el socket de larga duración AM5 donde el procesador AMD Ryzen 9 7950X3D se instala directamente sobre el. Este modelo tiene un socket AM5, chipset B650, soporte para DDR5 y SSD NVMe, ranuras PCIe 4.0 / 5.0 y conectividad USB moderna.\\\\
+	Este modelo destaca por sus robustas fases de poder y disipadores térmicos integrados en las ranuras M.2 y VRM, previniendo pérdidas de rendimiento por sobrecalentamiento durante jornadas prolongadas de trabajo, además, ofrece soporte nativo para tecnologías del futuro como carriles PCIe rápidos y memoria DDR5, garantizando que la computadora se mantenga vigente por muchos años a un costo razonable dentro de la planificación financiera.\\\\
+	Al enfrentarla a su rival directa, la MSI MAG B650 Tomahawk WiFi, la opción de Gigabyte destaca por ofrecer un esquema de fases de poder digital más robusto (12+2+2 fases) y disipadores térmicos pasivos de mayor grosor tanto en los VRM como en las ranuras M.2. Esta diferencia de diseño previene de mejor manera el estrangulamiento térmico (thermal throttling) de la placa bajo el estrés continuo que genera la compilación de código, garantizando además una mejor integridad de la señal de memoria a altas frecuencias por un costo prácticamente idéntico.\\\\\\\\\\
+
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (3)"}
+	
+	\newpage	
+	\subsection {Memoria RAM)}\noindent\\
+	\textbf{Corsair Vengeance DDR5 32 GB (\$519,99):}\\\\
+	La memoria RAM es fundamental para manejar múltiples aplicaciones abiertas. Los 32 GB de tipo DDR5 permiten trabajar cómodamente con motores de desarrollo, editores gráficos y herramientas de audio, evitando cuellos de botella y mejorando la fluidez general del sistema, configurado a una frecuencia optimizada de 6000MHz con latencia CL30 ultra baja. En el desarrollo de videojuegos, la velocidad de la memoria y la latencia son cruciales, ya que el sistema debe intercambiar texturas y datos masivos de geometría constantemente entre el almacenamiento y el procesador.\\
+	Elegir un kit CL30 en lugar de alternativas comunes CL36 o CL40 asegura que la comunicación con el procesador Ryzen sea inmediata, evitando tirones en el rendimiento del motor gráfico y permitiendo una fluidez absoluta al saltar entre Blender, Photoshop y el editor de código.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (2)"}
+
+	\newpage
+	\subsection {Almacenamiento Principal (Memoria SSD)}\noindent\\
+	\textbf{WD\_BLACK SN850X 2 TB NVMe SSD (\$294,99):}\\\\
+	Una capacidad de 2 terabytes es espacio suficiente para almacenar archivos durante el desarrollo, la memoria es de tipo SSD NVMe lo cual permite una alta velocidad de específicamente 7.300 MB/s de lectura y escritura, cargas rápidas del sistema operativo, motores de desarrollo y proyectos. Reduce significativamente los tiempos de compilación y guardado, lo cual es clave en entornos de desarrollo iterativo.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (4)"}
+	
+	\newpage
+	\subsection {Fuente de Poder}\noindent\\
+	\textbf{MSI MAG A850GL PCIE5 de 850W (\$79,99):}\\\\
+	Este modelo fue escogido gracias a su compatibilidad nativa con los estándares ATX 3.0 y PCIe 5.0, lo que significa qupara alimentar directamente a la RTX 4080 Super sin necesidad de usar adaptadores a diferencia de otra opción que contemplamos que fué la Corsair RM850x (2021) de costo similar que requiere de cables adaptadores propensos a falsos contactos y sobrecalentamiento.\\\\
+	La computadora consume un estimado máximo de 550 vatios, pot lo que la fuente de poder que elegimos con sus 850 vatios ofrecen un margen de seguridad de al menos el 35\% asegurando un flujo de energía limpio, protegido y con suficiente margen de maniobra técnica para amortiguar los picos de consumo generados por la CPU y la GPU a máxima carga.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (5)"}
+	
+	\newpage
+	\subsection {Gabinete}\noindent\\
+	\textbf{Montech AIR 903 MAX (\$89,99):}\\\\
+	Seleccionado por su diseño de panel frontal de malla destinado a maximizar el flujo de aire masivo. A diferencia de gabinetes cerrados o estéticos que sacrifican la ventilación interna y provocan un calor acumulado perjudicial, este modelo incluye de fábrica cuatro potentes ventiladores de 140 mm. Dispone del espacio suficiente para acomodar cómodamente las todos los componentes de la computadora optimizando la refrigeración pasiva de todos ellos.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (7)"}
+	
+	\newpage
+	\subsection {Sistema de Refrigeración}\noindent\\
+	\textbf{Thermalright Peerless Spirit 120 SE ARGB (\$35,89):}\\\\
+	Seleccionamos este enfriador por aire de doble torre y no un sistema de refrigeración líquida por un tema de que elevaban significativamente los costos y añadían el riesgo a largo plazo de fugas de refrigerante o fallas en la bomba.\\\\
+	Este disipador ofrece un rendimiento térmico equivalente por una fracción de su precio. Sus siete tubos de calor de cobre y doble ventilador mantienen las temperaturas del Ryzen 9 en rangos óptimos bajo estrés, siendo la mejor opción costo-beneficio para salvaguardar la vida útil del silicio.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (8)"}
+	
+	\newpage
+	\subsection {Pasta Térmica}\noindent\\
+	\textbf{ARCTIC MX-4 (\$5,49):}\\\\
+	Compuesto de micropartículas de carbono de alta conductividad térmica. Esta solución económica pero eficiente garantiza la eliminación de las microbolsas de aire entre el procesador y el bloque del disipador, logrando una transferencia de calor óptima. Su ventaja competitiva frente a otras pastas es su nula conductividad eléctrica, lo que suprime cualquier posibilidad de cortocircuito en los componentes cercanos de la placa madre en caso de excedente durante la instalación.\\\\\\\\\\
+	
+	\includegraphics[scale=0.3]{"../../../Downloads/WhatsApp Image 2026-05-23 at 9.33.35 PM (6)"}
+	
+	\newpage
+	\section{Tabla}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule[-1.25ex]{0pt}{4ex} Componente & Modelo & Precio \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}CPU & AMD Ryzen 9 7950X3D & \$726.78 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}GPU & Gigabyte RTX 4080 Super WINDFORCE V2 & \$1099,99 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Placa Madre & Gigabyte B650 AORUS Elite AX & \$146,69 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Memoria RAM & Corsair Vengeance DDR5 32 GB & \$519,99 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Memoria SSD & WD\_BLACK SN850X 2TB NVMe SSD & \$294,99 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Fuente de Poder & MSI MAG A850GL PCIE5 850W & \$79,99 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Gabinete & Montech AIR 903 MAX Black & \$89,99 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Sistema de Refrigeración & Thermalright Peerless Spirit 120 SE ARGB & \$35,89 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}Pasta Térmica & ARCTIC MX-4 & \$5,49 \\
+		\hline
+		\rule[-1.25ex]{0pt}{4ex}-------------- & PRECIO TOTAL : & \$2.999,8  \\
+		\hline
+	\end{tabular}
+	\\
+
+	\noindent\\Tuvimos un presupuesto máximo de: \$3000 y con la suma de los precios de todos los componentes nos queda que el sistema tuvo un costo total de: \$2999.8, por lo tanto cumple con el presupuesto establecido hemos diseñado una computadora mas que capaz para el desarrollo fluido de videojuegos.
+
+\end{document}
